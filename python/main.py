@@ -16,6 +16,8 @@ ax3.set_ylabel('Magnetometer (uT)')
 ax4.set_ylabel('Orientation (degrees)')
 ax4.set_xlabel('Time (ms)')
 
+
+
 time_data = []
 accel_data = []
 gyro_data = []
@@ -91,7 +93,7 @@ def update(frame):
         
         ax1.relim()
         ax1.autoscale_view()
-        ax1.legend()
+        
 
         #gyro
         if hasattr(update, 'gyro_lines'):
@@ -105,7 +107,7 @@ def update(frame):
             
         ax2.relim()
         ax2.autoscale_view()
-        ax2.legend()
+        
 
         #mag
         if hasattr(update, 'mag_lines'):
@@ -119,7 +121,7 @@ def update(frame):
             
         ax3.relim()
         ax3.autoscale_view()
-        ax3.legend()
+        
 
         #orientation
 
@@ -134,8 +136,7 @@ def update(frame):
             
         ax4.relim()
         ax4.autoscale_view()
-        ax4.legend()
-
+        
     return update.accel_lines + update.gyro_lines + update.mag_lines + update.orientation_lines
 
 
